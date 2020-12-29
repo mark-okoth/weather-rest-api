@@ -1,13 +1,12 @@
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Post from './components/postform'
 function App() {
   return (
     <div className="App">
        <Navbar/>
-       <div className="container">
-          <Home/>
-
-       </div>
+       <Post/>
+       <Home/>
     </div>
   );
 }

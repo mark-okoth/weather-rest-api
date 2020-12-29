@@ -10,28 +10,29 @@ class Home extends Component {
     axios.get(`http://localhost:8000/api/weather`)
       .then(res => {
         const weather = res.data;
-        console.log(weather)
         this.setState({ weather: weather });
       })
   }
 
   render() {
     return (
-    <div className="container col-6 mt-3">
-        { this.state.weather.map(wea =>
-        <div className="card mb-2">
+<div className="row">
+<div className="container col-6 mt-3">
+        { this.state.weather.map((wea, index) =>
+   <div className="card mb-2" key={index}>
         <ul>
-          <li key={wea.id}>{wea.name}</li> 
-          <li>{wea.day}</li>
+          <li>{wea.name}</li> 
+          <li >{wea.day}</li>
           <li>{wea.location}</li>
           <li>{wea.temperature} <span>&#8451;</span> </li>
           <li>{wea.description}</li>
           <li>{wea.time}</li>
-          <a className="btn btn-primary stretched-link btn-block mt-2" href={"http://localhost:8000/api/weather/"+wea.id}> view</a>
+          <a className="btn btn-primary stretched-link btn-block" href={"http://localhost:8000/api/weather/"+wea.id}> view</a>
          </ul>
-         </div>
+     </div>
         )}
-      </div>
+  </div>
+  </div> 
     )
   }
 }
