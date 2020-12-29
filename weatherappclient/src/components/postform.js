@@ -92,7 +92,6 @@ class PostWeather extends Component {
               className="form-control mb-2"
               onChange={this.handleChange}
             />
-
             <button className="btn btn-block mt-3">Post</button>
           </form>
         </div>
