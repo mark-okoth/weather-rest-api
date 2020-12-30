@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 class PostWeather extends Component {
   constructor(props) {
+    console.log(props)
     super(props);
     this.state = {
       name: "",
@@ -33,7 +34,8 @@ class PostWeather extends Component {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-       this.setState({
+        this.props.history.push('/')
+        this.setState({
         name: "",
         day: "",
         location: "",
@@ -109,4 +111,4 @@ class PostWeather extends Component {
   }
 }
 
-export default PostWeather;
+export default withRouter(PostWeather);
