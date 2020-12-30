@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import {Redirect} from 'react-router-dom'
 class PostWeather extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +33,15 @@ class PostWeather extends Component {
       .then((res) => {
         console.log(res);
         console.log(res.data);
+       this.setState({
+        name: "",
+        day: "",
+        location: "",
+        time: "",
+        description: "",
+        temperature: "",
+       })
+        
       }).catch(err =>{
         if(err.response){
         console.log(err.response.data)

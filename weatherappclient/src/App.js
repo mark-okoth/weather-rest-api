@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Post from "./components/postform";
-import { link, Route, Switch } from "react-router-dom";
+import { link, Redirect, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <div className="App">
