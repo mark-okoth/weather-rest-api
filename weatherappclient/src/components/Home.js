@@ -27,7 +27,7 @@ class Home extends Component {
           <li>{wea.temperature} <span>&#8451;</span> </li>
           <li>{wea.description}</li>
           <li>{wea.time}</li>
-          <a className="btn btn-primary stretched-link btn-block" href={"http://localhost:8000/api/weather/"+wea.id}> view</a>
+          <a className="btn btn-primary stretched-link btn-block" href={"http://localhost:3000/home/"+wea.id}> view</a>
          </ul>
      </div>
         )}
