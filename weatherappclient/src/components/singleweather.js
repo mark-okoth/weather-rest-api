@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 
 class Singleweather extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       results: [],
@@ -28,7 +27,8 @@ class Singleweather extends Component {
         <div className="card bg-success mt-5">
           <div className="card-body">
           {
-            this.state.results.map(data=> <div className="List">
+            this.state.results.map((data, idx)=> 
+            <div className="List" key={idx }>
               <ul className="list-group">
                 <li className="list-group-item">{data.name}</li>
                 <li className="list-group-item">{data.time}</li>
